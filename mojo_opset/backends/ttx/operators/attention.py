@@ -17,7 +17,7 @@ from mojo_opset.core import MojoSWA
 
 
 class TTXPagedPrefillGQA(MojoPagedPrefillGQA):
-    supported_platforms_list = ["npu", "ilu"]
+    supported_platforms_list = ["npu", "ilu", "mlu"]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -70,7 +70,7 @@ class TTXPagedPrefillGQA(MojoPagedPrefillGQA):
 
 
 class TTXPagedDecodeGQA(MojoPagedDecodeGQA):
-    supported_platforms_list = ["npu", "ilu"]
+    supported_platforms_list = ["npu", "ilu", "mlu"]
 
     def forward(
         self,
@@ -188,7 +188,7 @@ class TTXPagedDecodeSWA(MojoPagedDecodeSWA):
             self.gqa_interleave,
             softmax_scale,
         )
-        
+
         return o
 
 
